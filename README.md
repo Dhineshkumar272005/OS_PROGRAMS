@@ -31,14 +31,10 @@ graph TD
     B -- "2. HTTP POST Request<br/>(Port 5000)" --> C
     C -- "3. Subprocess Execution<br/>(Timeout Managed)" --> D
     
-    D -- "4. Execute Payload" --> E
     D -- "4. Execute Payload" --> F
-    D -- "4. Execute Payload" --> G
     
     %% Return Flow (Upwards) %%
-    E -. "5. Raw stdout/stderr" .-> D
     F -. "5. Raw stdout/stderr" .-> D
-    G -. "5. Raw stdout/stderr" .-> D
     
     D -. "6. Captured Output" .-> C
     C -. "7. Parsed JSON Response" .-> B
